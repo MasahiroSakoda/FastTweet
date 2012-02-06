@@ -9,7 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface TimeLine : NSObject {
-	
+	NSString	*userName;
+	UIImage		*thumbImage;
+	NSString	*tweetText;
+	NSString	*created;
 }
+
+@property (nonatomic, retain) NSString	*userName;
+@property (nonatomic, retain) UIImage	*thumbImage;
+@property (nonatomic, retain) NSString	*tweetText;
+@property (nonatomic, retain) NSString	*created;
+
+- (id)initWithTweetDictionary:(NSDictionary *)tweetDict;
 
 @end

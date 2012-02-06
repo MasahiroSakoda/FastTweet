@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <netinet/in.h>
+#import <netdb.h>
+#import <arpa/inet.h>
 
 @interface NetworkUtil : NSObject {
 	
 }
+
++ (BOOL)isConnectToNetwork;
 
 @end

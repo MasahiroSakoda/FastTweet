@@ -1,3 +1,6 @@
-@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+#import "AppDelegate.h"
+
+@interface FastTweetAppDelegate : AppDelegate {
+}
 
 @end

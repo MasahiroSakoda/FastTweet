@@ -41,6 +41,27 @@
 	self.navigationItem.rightBarButtonItem = tweetButton;
 	[tweetButton release];
 	timeLineArray = [[NSMutableArray alloc] initWithCapacity:0];;
+	
+	// navigation CustomView
+	UIView *navigationView = [[UIView alloc] initWithFrame:CGRectMake(self.navigationItem.titleView.frame.origin.x, self.navigationItem.titleView.frame.origin.y, 200, 44)];
+	navigationView.backgroundColor = [UIColor blueColor];
+	
+	UILabel *naviLabel = [[UILabel alloc] initWithFrame:navigationView.frame];
+	naviLabel.numberOfLines = 0;
+	naviLabel.font = [UIFont boldSystemFontOfSize:14];
+	naviLabel.minimumFontSize = 10;
+	naviLabel.text = @"aaaaaaaa";
+	naviLabel.textAlignment = UITextAlignmentCenter;
+	[navigationView addSubview:naviLabel];
+	[naviLabel release];
+
+	UIButton *naviButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	[naviButton addTarget:self action:@selector(tapNaviBtn:) forControlEvents:UIControlEventTouchUpInside];
+	naviButton.backgroundColor = [UIColor clearColor];
+	[navigationView addSubview:naviButton];
+	
+	self.navigationItem.titleView = navigationView;
+	[navigationView release];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -151,6 +172,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	TweetDetailViewController *tweetDetailViewCtrl = [[TweetDetailViewController alloc] initWithNibName:@"TweetDetailViewController" bundle:nil];
+	TimeLine *tl = [timeLineArray objectAtIndex:indexPath.row];
+	tweetDetailViewCtrl.timeLine = tl;
+	[self.navigationController pushViewController:tweetDetailViewCtrl animated:YES];
+	[tweetDetailViewCtrl release];
     /*
     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
     // ...

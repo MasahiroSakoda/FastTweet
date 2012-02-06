@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TweetDetailView.h"
+#import "AppDelegate.h"
+#import "TimeLine.h"
 
-@interface TweetDetailViewController : UIViewController
+@interface TweetDetailViewController : UIViewController <TweetDetailViewDelegate> {
+}
+
+@property (nonatomic, retain) TimeLine *timeLine;
+@property (nonatomic, retain) TweetDetailView *tweetDetailView;
 
 @end

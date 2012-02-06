@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeLineViewCell : UITableViewCell {
-	
+	UILabel *userNameLabel;
+	UILabel *timeLabel;
+	UIImageView *thumbImageView;
+	UILabel *tweetLabel;
 }
+
+@property (nonatomic, retain) UILabel *userNameLabel;
+@property (nonatomic, retain) UILabel *timeLabel;
+@property (nonatomic, retain) UIImageView *thumbImageView;
+@property (nonatomic, retain) UILabel *tweetLabel;
 
 @end

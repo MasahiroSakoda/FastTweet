@@ -14,6 +14,7 @@
 #import "TimeLine.h"
 #import "TimeLineViewCell.h"
 #import "TweetViewController.h"
+#import "TweetDetailViewController.h"
 
 @interface RootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TwitterHandlerDelegate> {
 	NSMutableArray *timeLineArray;
